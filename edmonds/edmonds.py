@@ -63,7 +63,7 @@ def _getCycle(n, g, visited=None, cycle=None):
 def _mergeCycles(cycle, G, RG, g, rg):
     allInEdges = []
     minInternal = None
-    minInternalWeight = sys.maxint
+    minInternalWeight = sys.maxsize
 
     # find minimal internal edge weight
     for n in cycle:
@@ -154,7 +154,7 @@ def mst(root, G):
     for n in RG:
         if len(RG[n]) == 0:
             continue
-        minimum = sys.maxint
+        minimum = sys.maxsize
         s, d = None, None
         for e in RG[n]:
             if RG[n][e] < minimum:
